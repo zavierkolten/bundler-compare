@@ -2,8 +2,10 @@
 import { ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import { ElTooltip, ElSelect, ElOption, ElTable, ElTableColumn } from 'element-plus'
+import Foo from "./components/Foo";
+import Bar from "./components/Bar.vue";
 
-const title = ref<string>("Rspack + Vue");
+const title = ref<string>(`${__BUNDLER__} + Vue`);
 
 const value1 = ref([])
 const value2 = ref([])
@@ -45,15 +47,9 @@ const tableData = [
 </script>
 
 <template>
-	<div>
-		<a href="https://www.rspack.dev/" target="_blank">
-			<img src="./assets/rspack.svg" class="logo" alt="Rspack logo" />
-		</a>
-		<a href="https://vuejs.org/" target="_blank">
-			<img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-		</a>
-	</div>
 	<HelloWorld :msg="title" />
+	<Foo />
+	<Bar />
 	<ElTooltip />
 	<div class="m-4">
 		<p>default</p>

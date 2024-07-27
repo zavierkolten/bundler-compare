@@ -17,7 +17,7 @@ module.exports = {
     main: './src/main.ts',
   },
   resolve: {
-    extensions: ['...', '.ts', '.vue'],
+    extensions: ['...', '.ts', '.tsx', '.vue'],
   },
   plugins: [
     new VueLoaderPlugin(),
@@ -27,6 +27,7 @@ module.exports = {
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
+      __BUNDLER__: JSON.stringify('Webpack'),
     }),
     new MiniCssExtractPlugin(),
 		new webpack.ProgressPlugin(),
